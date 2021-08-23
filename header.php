@@ -17,6 +17,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
+
 <header class="w-100 py-lg-3 py-2">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
@@ -51,12 +52,20 @@
         </div>
     </div>
 </header>
-<div id="mobile-menu" class="d-block d-md-none closed">
-    <div class="close-icon" onclick="closeMenu()">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/icons/IconCloseWhite.svg" alt="">
+    <div id="mobile-menu" class="d-block d-md-none closed">
+        <div class="close-icon" onclick="closeMenu()">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/icons/IconCloseWhite.svg" alt="">
+        </div>
+        <div onclick="closeMenu()">
+            <?php
+            wp_nav_menu( array(
+                'menu' => 'main',
+                'menu_class' => 'my-5 mx-5 list-unstyled',
+                'container' => false,
+            ) );
+            ?>
+        </div>
     </div>
-</div>
-
 <script>
     openMenu = () => {
         document.getElementById('mobile-menu').classList.remove('closed')
