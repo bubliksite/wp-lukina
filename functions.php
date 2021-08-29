@@ -31,5 +31,57 @@ register_nav_menu('menu', 'Главное меню');
 /** Включаем картинки **/
 add_theme_support( 'post-thumbnails' );
 
- ?>
+/** Создаем новый тип записей - Программы **/
+add_action('init', 'programs');
+function programs() {
+	register_post_type('programs', array(
+			'public' => true,
+			'supports' => array ('title'),
+			'labels' => array (
+				'name' => 'Программы',
+				'add_new' => 'Добавить программу',
+				'all_items' => 'Все программы',
+				'add_new_item' => 'Добавить программу'
+			),
+			'menu_position' => 4,
+			'menu_icon' => 'custom-logo'
+		));
+}
+
+// Создаем тип таксономии категории
+add_action( 'init', 'create_taxonomy' );
+function create_taxonomy(){
+
+    register_taxonomy( 'programscategory', [ 'programs' ], [
+        'label'                 => '',
+        'labels'                => [
+            'name'              => 'Категории',
+            'singular_name'     => 'Категория',
+            'search_items'      => 'Найти категории',
+            'all_items'         => 'Все категории',
+            'view_item '        => 'Посмотреть категория',
+            'parent_item'       => 'Родительская категория',
+            'parent_item_colon' => 'Родительская категория:',
+            'edit_item'         => 'Изменить категорию',
+            'update_item'       => 'Обновить категорию',
+            'add_new_item'      => 'Добавить категорию',
+            'new_item_name'     => 'Название категории',
+            'menu_name'         => 'Категория',
+        ],
+        'description'           => '',
+        'public'                => true,
+        'show_in_menu'          => true,
+        'show_in_nav_menus'     => true,
+        'hierarchical'          => true,
+
+        'rewrite'               => true,
+        'capabilities'          => array(),
+
+        'show_admin_column'     => true,
+        'show_in_rest'          => null,
+        'rest_base'             => null,
+    ] );
+}
+
+?>
 

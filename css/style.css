@@ -30,6 +30,85 @@ h2 {
     color: white;
 }
 
+.btn-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal h5 {
+    color: #38000B;
+    font-weight: 600;
+}
+
+.modal h2 {
+    color: #38000B;
+}
+
+.modal hr {
+    color: #AA9689;
+}
+
+#modalSchedule .modal-dialog {
+    max-width: 90%;
+}
+
+#modalSchedule .modal-content {
+    background-color: #E9E2D7;
+}
+
+.socials a img {
+    margin: 0 3px;
+}
+
+.link-unstyled, .link-unstyled:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-default, .link-default:hover {
+    color: #AC5F68;
+}
+
+
+
+/* Forms */
+
+.caldera-grid input.form-control, .caldera-grid select.form-control {
+    height: 50px !important;
+    padding: 10px !important;
+    border: 1px solid #000 !important;
+}
+
+.caldera-grid textarea.form-control {
+    padding: 10px !important;
+    border: 1px solid #000 !important;
+}
+
+.caldera-grid .btn-default {
+    padding: 16px 64px !important;
+    width: 100%;
+    background-color: #F5B22B !important;
+    text-transform: uppercase;
+    color: #fff !important;
+    font-weight: 600 !important;
+    border-color: transparent !important;
+}
+
+.caldera-grid select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../images/icons/IconSelect.svg") !important;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+}
+
 /* Header */
 
 header {
@@ -46,6 +125,11 @@ header .menu a {
     color: #fff;
     text-decoration: none;
     padding-bottom: 14px;
+}
+
+header .menu .btn {
+    color: #fff;
+    padding: 0;
 }
 
 header #menu-main a:hover, header #menu-main li.current-menu-item:not(.menu-item-type-custom) a {
@@ -174,7 +258,6 @@ section.slider .item__controls .disabled i.bi {
 }
 
 section.excerpt {
-    background-color: #FBF9F7;
     text-align: center;
 }
 
@@ -192,11 +275,15 @@ section.excerpt p em {
     font-size: 32px;
 }
 
-section.programs h2, section.about h2, section.philosophy h2, section.blog h2 {
+section.bg-primary {
+    background-color: #FBF9F7 !important;
+}
+
+section.casual h2 {
     font-weight: 700;
 }
 
-section.programs hr, section.about hr, section.philosophy hr, section.blog hr {
+section.casual hr {
     opacity: 1;
     border: none;
     border-bottom: 5px solid #AC5F68;
@@ -206,10 +293,6 @@ section.programs hr, section.about hr, section.philosophy hr, section.blog hr {
 
 section.programs a {
     color: #AC5F68;
-}
-
-section.about, section.blog {
-    background-color: #FBF9F7;
 }
 
 section.about .main-image {
@@ -224,9 +307,9 @@ section.about p.small-excerpt {
     line-height: 19px;
 }
 
-section.about a img {
-    margin: 0 3px;
- }
+section.about .socials {
+    justify-content: center;
+}
 
 section.philosophy .philosophy_card {
     background-color: #E9E2D7;
@@ -238,6 +321,132 @@ section.blog .post__title p {
 
 section.blog a {
     color: #3B0912;
+}
+
+section.partners img {
+    max-width: 100%;
+}
+
+section.directions ul {
+    padding: 0;
+}
+
+section.consultations h5 {
+    font-weight: 600;
+}
+
+section.consultations .consultation .consultation__item {
+    border-bottom: 1px solid #AC5F68;
+}
+
+section.team .team__item {
+    text-align: center;
+}
+
+section.team .team__item .team__image {
+    width: 240px;
+    height: 240px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+section.team .team__item p {
+    font-weight: 600;
+}
+
+section.navigation .navigation__bar {
+    height: 10px;
+    width: 100%;
+    background-color: #DEDCDC;
+}
+
+section.navigation .col-6:first-child .navigation__bar {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+section.navigation .col-6:last-child .navigation__bar {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+section.navigation .active .inner {
+    background-color: #F5B22B;
+    height: 100%;
+    border-radius: 5px;
+}
+
+section.navigation .program__card {
+    background-color: #F6F1EB;
+}
+
+.owl-nav {
+    position: absolute;
+    top: calc(50% - 15px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #824D4E;
+    font-size: 26px;
+}
+
+.owl-nav .owl-prev {
+    position: absolute;
+    left: -50px;
+}
+
+.owl-nav .owl-next {
+    position: absolute;
+    right: -50px;
+}
+
+footer {
+    background-color: #FBF9F7;
+    background-image: url("../images/bg-dna.png");
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    background-size: contain;
+}
+
+footer h5 {
+    color: #38000B;
+    font-weight: 600;
+}
+
+footer ul {
+    flex-wrap: wrap;
+}
+
+footer li {
+    margin: 10px 20px 10px 0;
+}
+
+footer li a, footer li a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+footer a.tel {
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+footer a.mail {
+    color: #38000B;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+footer .socials {
+    justify-content: flex-start;
+}
+
+footer .copyright * {
+    color: #38000B;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 998px) {
@@ -295,6 +504,18 @@ section.blog a {
         height: 10px;
         width: 10px;
     }
+    section.navigation h4 {
+        font-size: 12px;
+    }
+    section.navigation nav {
+        font-size: 12px;
+    }
+    footer {
+        background-image: none;
+    }
+    footer .socials {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) and (orientation: landscape){
@@ -313,4 +534,17 @@ section.blog a {
     h1, h2 {
         font-size: 38px;
     }
+    .owl-nav .owl-prev {
+        position: absolute;
+        left: 0;
+    }
+
+    .owl-nav .owl-next {
+        position: absolute;
+        right: 0;
+    }
+    section.navigation .program__card {
+        padding: 2.5rem !important;
+    }
+
 }

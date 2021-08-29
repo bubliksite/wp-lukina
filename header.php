@@ -34,6 +34,9 @@
                     'container' => false,
                 ) );
                 ?>
+                <button class="d-none d-md-flex btn menu-item" data-bs-toggle="modal" data-bs-target="#modalFeedback">
+                    Записаться
+                </button>
                 <nav style="flex-wrap: nowrap" class="nav ms-3">
                     <a class="nav-link cursor-pointer d-block d-md-none" onclick="openMenu()">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/icons/IconHamburger.svg" alt="">
