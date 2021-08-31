@@ -232,6 +232,23 @@ main section#feedback .feedback__card .inner__card {
     height: calc(250px - 4rem);
 }
 
+main section#cases .case__card {
+    background-color: #F6F1EB;
+}
+
+.modal-cases .modal-dialog {
+    width: 650px;
+    max-width: 90%;
+}
+
+.modal-cases .modal-dialog h4 {
+    font-weight: bold;
+}
+
+.modal-cases .modal-dialog hr {
+    border-color: #F5B22B;
+}
+
 section.page-navigation a {
     text-decoration: none;
     margin: 0 25px;
