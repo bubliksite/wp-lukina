@@ -109,6 +109,25 @@ h2 {
     background-position-y: 50%;
 }
 
+.accordion-item, .accordion-button {
+    background-color: transparent;
+    border: 0;
+}
+
+.accordion-button:focus {
+    box-shadow: unset;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #582D33;
+    background-color: transparent;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>') !important;
+    color: #582D33;
+}
+
 /* Header */
 
 header {
@@ -172,12 +191,71 @@ header #menu-main a:hover, header #menu-main li.current-menu-item:not(.menu-item
     font-weight: 700;
 }
 
+main section:nth-child(even) {
+    background-color: #FBF9F7;
+}
+
+main section#format {
+    background-image: url("../images/bg-format.png");
+    background-size: 40vh;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+main section#format .format__body {
+    width: 80%;
+}
+
+main section#format h5 {
+    color: #582D33;
+}
+
+main section#result {
+    background: transparent !important;
+}
+
+main section#result .feedback__form {
+    width: 30%;
+}
+
+main section#result .col-md-6 .feedback__form {
+    width: 50%;
+}
+
+main section#feedback .feedback__card {
+    background-color: #F8EDDD;
+    overflow: hidden;
+}
+
+main section#feedback .feedback__card .inner__card {
+    overflow: hidden;
+    height: calc(250px - 4rem);
+}
+
+section.page-navigation a {
+    text-decoration: none;
+    margin: 0 25px;
+    position: relative;
+    white-space: nowrap;
+    color: #828282;
+}
+
+section.page-navigation a:hover {
+    color: #38000B;
+}
+
+section.page-navigation a:not(:last-child)::after {
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    right: -25px;
+    top: -2.5px;
+}
+
 section.for-header {
     height: 83px;
     background-color: #38000B;
 }
-
-/* Slider */
 
 section.slider {
     height: max-content;
@@ -192,7 +270,7 @@ section.slider .slider__item {
 section.slider .owl-carousel .owl-dots {
     position: absolute;
     width: 100%;
-    bottom: 45px;
+    bottom: 30px;
     display: flex;
     justify-content: center;
 }
@@ -213,6 +291,13 @@ section.slider .owl-carousel .owl-dots .owl-dot.active {
 
 section.slider video {
     z-index: 1;
+    height: 100%;
+    max-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+section.slider video[poster] {
     height: 100%;
     max-height: 100vh;
     width: 100%;
@@ -248,7 +333,7 @@ section.slider .item__caption .caption__controls img {
 
 section.slider .item__controls {
     position: absolute;
-    bottom: 70px;
+    bottom: 40px;
     z-index: 3;
     display: flex;
 }
@@ -294,6 +379,10 @@ section.casual hr {
     border-bottom: 5px solid #AC5F68;
     width: 200px;
     max-width: 50%;
+}
+
+main section.casual hr {
+    border-color: #F5B22B;
 }
 
 section.programs a {
@@ -382,8 +471,23 @@ section.navigation .active .inner {
     border-radius: 5px;
 }
 
+section.navigation .program__card h5 {
+    min-height: 48px;
+}
+
 section.navigation .program__card {
     background-color: #F6F1EB;
+    height: 100%;
+}
+
+section.navigation .owl-stage {
+    display: flex;
+}
+
+section.navigation .program__card .more-link {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
 }
 
 section.top {
@@ -414,6 +518,10 @@ section.top .breadcrumbs {
 section.top .breadcrumbs, section.top .breadcrumbs * {
     color: white;
     text-decoration: none;
+}
+
+section.page-navigation {
+    background-color: #F8F8F8;
 }
 
 .posts img.interview {
@@ -549,7 +657,7 @@ footer .copyright * {
         font-size: 36px !important;
     }
     section.slider .owl-carousel .owl-dots {
-        bottom: 15px;
+        bottom: 8px;
     }
     section.slider .owl-carousel .owl-dots .owl-dot {
         height: 10px;
@@ -566,6 +674,28 @@ footer .copyright * {
     }
     footer .socials {
         justify-content: center;
+    }
+    section.excerpt p em {
+        font-size: 18px;
+    }
+    section.page-navigation {
+        display: none;
+    }
+    section.top {
+        height: max-content;
+    }
+    main section#program .border-start {
+        border-left-width: 0 !important;
+    }
+    main section#format {
+        background-image: none;
+    }
+
+    main section#format .format__body {
+        width: 100%;
+    }
+    main section#result .feedback__form {
+        width: 90%;
     }
 }
 

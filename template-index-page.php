@@ -72,7 +72,7 @@ include 'components/slider.php'
         <hr>
         <p class="my-5"><? echo CFS()->get('partText') ?></p>
         <div class="text-center">
-            <img class="mx-auto w-100 d-none d-md-block" src="<? echo CFS()->get('imageDesktop') ?>" alt="">
+            <img class="mx-auto w-50 d-none d-md-block" src="<? echo CFS()->get('imageDesktop') ?>" alt="">
             <img class="mx-auto w-100 d-md-none d-block" src="<? echo CFS()->get('imageMobile') ?>" alt="">
         </div>
         <div class="mt-5 mb-3 philosophy_card">
@@ -86,7 +86,7 @@ include 'components/slider.php'
     </div>
 </section>
 
-<? $blogs = get_posts(['numberposts'=> 5]) ?>
+<? $blogs = get_posts(['numberposts'=> 4]) ?>
 <section class="casual bg-primary blog py-5">
     <div class="container my-5">
         <h2 class="mb-5">Блог</h2>
@@ -108,7 +108,7 @@ include 'components/slider.php'
                                 </small>
                             </p>
                             <p class="mt-2 mb-0 post__text">
-                                <? echo $blog->post_content ?>
+                                <? echo mb_strimwidth($blog->post_content, 0, 200, '...'); ?>
                             </p>
                             <a class="pt-2" href="<? echo get_the_permalink($blog->ID) ?>">
                                 <small>Читать далее>></small>
@@ -129,7 +129,7 @@ include 'components/slider.php'
         <hr>
         <div class="row my-5">
             <? foreach ($partners as $partner) : ?>
-            <div class="col-md-6 col-md-3 mb-3">
+            <div class="col-md-3 mb-3">
                 <div class="d-flex justify-content-center">
                     <img src="<? echo $partner['partnerImage']; ?>" alt="<? echo $partner['partnerName']; ?>">
                 </div>

@@ -36,3 +36,14 @@ expandCaption = (index) => {
     document.getElementById(`collapse_${index}`) ? document.getElementById(`collapse_${index}`).style.display = 'block' : null
     document.getElementById(`expand_${index}`) ? document.getElementById(`expand_${index}`).style.display = 'none' : null
 }
+
+expandFeedback = (index) => {
+    document.getElementById(`card_${index}`).style.height = 'unset'
+    document.getElementById(`btn_${index}`).style.display = 'none'
+}
+
+collapseFeedback = (index) => {
+    document.getElementById(`card_${index}`).style.height = 'calc(250px - 4rem)'
+    document.getElementById(`btn_${index}`).style.display = 'block'
+
+}

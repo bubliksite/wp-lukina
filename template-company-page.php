@@ -93,11 +93,11 @@ Version: 1.0
                     ?>
                     <div class="owl-carousel owl-carousel-programs d-flex align-items-center">
                         <? while ( $query->have_posts() ) : $query->the_post() ?>
-                        <div class="program__card text-center p-3 col">
+                        <div class="program__card p-3 col">
                             <h5 class="fw-bold my-4"><? echo the_title() ?></h5>
                             <p class="text-start"><? echo CFS()->get('description') ?></p>
                             <br>
-                            <div class="text-end">
+                            <div class="text-end more-link">
                                 <a href="<? the_permalink() ?>" class="link-default">Подробнее <i class="bi bi-arrow-right-short"></i></a>
                             </div>
                         </div>
@@ -140,24 +140,24 @@ Version: 1.0
         </div>
     </div>
 </section>
-<section class="casual team py-5">
-    <div class="container py-5">
-        <h2 class="mb-5">Преподаватели</h2>
-        <hr>
-        <? $team = CFS()->get('loopEmployees') ?>
-        <div class="owl-carousel owl-carousel-team my-5">
-            <? foreach ($team as $member) : ?>
-                <div class="team__item">
-                    <div class="team__image">
-                        <img src="<? echo $member['image']; ?>" alt="">
-                    </div>
-                    <p class="mt-3"><? echo $member['name']; ?></p>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalSchedule" class="link-default">Записаться</a>
-                </div>
-            <? endforeach; ?>
-        </div>
-    </div>
-</section>
+<!--<section class="casual team py-5">-->
+<!--    <div class="container py-5">-->
+<!--        <h2 class="mb-5">Преподаватели</h2>-->
+<!--        <hr>-->
+<!--        --><?// $team = CFS()->get('loopEmployees') ?>
+<!--        <div class="owl-carousel owl-carousel-team my-5">-->
+<!--            --><?// foreach ($team as $member) : ?>
+<!--                <div class="team__item">-->
+<!--                    <div class="team__image">-->
+<!--                        <img src="--><?// echo $member['image']; ?><!--" alt="">-->
+<!--                    </div>-->
+<!--                    <p class="mt-3">--><?// echo $member['name']; ?><!--</p>-->
+<!--                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalSchedule" class="link-default">Записаться</a>-->
+<!--                </div>-->
+<!--            --><?// endforeach; ?>
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <script>
     $(document).ready(function(){
