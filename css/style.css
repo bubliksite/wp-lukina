@@ -257,6 +257,8 @@ section.for-header {
     background-color: #38000B;
 }
 
+/* Slider */
+
 section.slider {
     height: max-content;
     max-height: 100vh;
@@ -270,6 +272,7 @@ section.slider .slider__item {
 section.slider .owl-carousel .owl-dots {
     position: absolute;
     width: 100%;
+    bottom: 45px;
     bottom: 30px;
     display: flex;
     justify-content: center;
@@ -333,6 +336,7 @@ section.slider .item__caption .caption__controls img {
 
 section.slider .item__controls {
     position: absolute;
+    bottom: 70px;
     bottom: 40px;
     z-index: 3;
     display: flex;
@@ -657,6 +661,7 @@ footer .copyright * {
         font-size: 36px !important;
     }
     section.slider .owl-carousel .owl-dots {
+        bottom: 15px;
         bottom: 8px;
     }
     section.slider .owl-carousel .owl-dots .owl-dot {
