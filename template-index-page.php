@@ -144,6 +144,7 @@ include 'components/slider.php'
     $(document).ready(function(){
         $(".owl-carousel-slider").owlCarousel({
             items: 1,
+            dots: true
         });
     });
 </script>

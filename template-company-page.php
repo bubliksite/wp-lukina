@@ -65,7 +65,7 @@ Version: 1.0
         <div class="py-5">
             <div class="nav nav-tabs row align-items-end" style="border-bottom: none" id="nav-tab" role="tablist">
                 <? foreach ($categories as $index=>$category) : ?>
-                    <div class="col-6 p-0 <? echo $index == 0 ? 'active' : '' ?>" id="nav-<? echo $category->slug; ?>-tab" data-bs-toggle="tab" data-bs-target="#nav-<? echo $category->slug; ?>" type="button" role="tab" aria-controls="nav-<? echo $category->slug; ?>" aria-selected="true">
+                    <div class="col-6 navigation__item p-0 <? echo $index == 0 ? 'active' : '' ?>" id="nav-<? echo $category->slug; ?>-tab" data-bs-toggle="tab" data-bs-target="#nav-<? echo $category->slug; ?>" type="button" role="tab" aria-controls="nav-<? echo $category->slug; ?>" aria-selected="true">
                         <h4 class="fw-bold text-uppercase px-3"><? echo $category->name; ?></h4>
                         <div class="navigation__bar">
                             <div class="inner"></div>
@@ -163,6 +163,7 @@ Version: 1.0
     $(document).ready(function(){
         $(".owl-carousel-slider").owlCarousel({
             items: 1,
+            dots: '<? count($slider) ?>' ? true : false,
         });
     });
     $(document).ready(function(){

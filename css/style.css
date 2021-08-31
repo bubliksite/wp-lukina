@@ -172,6 +172,11 @@ header #menu-main a:hover, header #menu-main li.current-menu-item:not(.menu-item
     font-weight: 700;
 }
 
+section.for-header {
+    height: 83px;
+    background-color: #38000B;
+}
+
 /* Slider */
 
 section.slider {
@@ -361,12 +366,12 @@ section.navigation .navigation__bar {
     background-color: #DEDCDC;
 }
 
-section.navigation .col-6:first-child .navigation__bar {
+section.navigation .navigation__item:first-child .navigation__bar {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
-section.navigation .col-6:last-child .navigation__bar {
+section.navigation .navigation__item:last-child .navigation__bar {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -379,6 +384,52 @@ section.navigation .active .inner {
 
 section.navigation .program__card {
     background-color: #F6F1EB;
+}
+
+section.top {
+    height: 800px;
+    max-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+section.top h2 {
+    color: #F5B22B;
+}
+
+section.top .term {
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    background-color: #F5B22B;
+    max-width: max-content;
+}
+
+section.top .breadcrumbs {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F5B22B;
+}
+
+section.top .breadcrumbs, section.top .breadcrumbs * {
+    color: white;
+    text-decoration: none;
+}
+
+.posts img.interview {
+    max-width: 100px;
+    object-fit: contain;
+}
+
+.posts img.books {
+    max-width: 170px;
+    object-fit: contain;
+}
+
+.posts img.articles {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
 }
 
 .owl-nav {

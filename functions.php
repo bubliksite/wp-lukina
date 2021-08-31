@@ -25,6 +25,14 @@ function remove_editor() {
 }
 add_action('admin_init', 'remove_editor');
 
+/** Ограничение длины цитаты **/
+add_filter( 'excerpt_length', function(){
+    return 20;
+} );
+add_filter('excerpt_more', function($more) {
+    return '...';
+});
+
 /** Включаем меню **/
 register_nav_menu('menu', 'Главное меню');
 
@@ -36,7 +44,7 @@ add_action('init', 'programs');
 function programs() {
 	register_post_type('programs', array(
 			'public' => true,
-			'supports' => array ('title'),
+			'supports' => array ('title', 'thumbnail'),
 			'labels' => array (
 				'name' => 'Программы',
 				'add_new' => 'Добавить программу',
