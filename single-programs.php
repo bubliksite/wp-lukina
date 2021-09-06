@@ -8,27 +8,40 @@
     <?
     $parent_category = get_the_terms(the_ID(), 'programscategory');
     $term = CFS()->get('term');
+    $slider = CFS()->get('loopSlider');
     ?>
 </div>
 
-
-<section class="top" style="background-image: url('<? echo get_the_post_thumbnail_url() ?>')">
-    <div class="container h-100 py-5">
-        <div class="h-100 d-flex pb-5 align-items-end">
-            <div>
-                <? if ($term) : ?>
-                <h5 class="term mb-3"><? echo CFS()->get('term') ?></h5>
-                <? endif; ?>
-                <div class="breadcrumbs">
-                    <a href="/">Главная</a> —
-                    <a href="<? if ($parent_category[0]->term_id === 7) {echo '/companies';} else {echo '/personal';} ?>"><?echo $parent_category[0]->name?></a> —
-                    <a href="/#programs">Программы</a> —
-                    <span><?the_title()?></span>
+<section class="slider">
+    <div class="owl-carousel owl-carousel-slider">
+        <? foreach ($slider as $index=>$slide) : ?>
+            <div class="slider__item d-flex justify-content-center">
+                <video id="video_<?echo $index?>" poster="<? echo $slide['sliderPoster']; ?>">
+                    <source src="<? echo $slide['sliderVideo'] ?>" type="video/mp4">
+                </video>
+                <div id="caption_text_<? echo $index ?>"></div>
+                <div class="program__description container" id="caption_<? echo $index ?>">
+                    <? if ($term) : ?>
+                        <h5 class="term mb-3"><? echo CFS()->get('term') ?></h5>
+                    <? endif; ?>
+                    <div class="breadcrumbs">
+                        <a href="/">Главная</a> —
+                        <a href="<? if ($parent_category[0]->term_id === 7) {echo '/companies';} else {echo '/personal';} ?>"><?echo $parent_category[0]->name?></a> —
+                        <a href="/#programs">Программы</a> —
+                        <span><?the_title()?></span>
+                    </div>
+                    <h2 class="fw-bold mt-3"><? the_title() ?></h2>
                 </div>
-                <h2 class="fw-bold mt-3"><? the_title() ?></h2>
+                <div class="item__controls">
+                    <div class="controls__play active" id="play_<? echo $index ?>" onclick="playVideo(<?echo $index?>)">
+                        <i class="bi bi-play-fill" style="font-size: 48px"></i>
+                    </div>
+                    <div class="controls__pause disabled" id="pause_<? echo $index ?>" onclick="pauseVideo(<?echo $index?>)">
+                        <i class="bi bi-pause-fill" style="font-size: 48px"></i>
+                    </div>
+                </div>
             </div>
-            
-        </div>
+        <? endforeach; ?>
     </div>
 </section>
 <section class="excerpt">
@@ -197,13 +210,15 @@
                 </div>
             </div>
         </div>
-        <div class="row align-items-center">
-            <div class="col-md-6 ps-0">
-                <img class="w-100" src="<? echo CFS()->get('resumeComparationImage'); ?>" alt="">
-            </div>
-            <div class="col-md-6 mt-3">
-                <div class="ps-0 ps-md-3">
-                    <em><? echo CFS()->get('resumeComparationText'); ?></em>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6 ps-0">
+                    <img class="w-100" src="<? echo CFS()->get('resumeComparationImage'); ?>" alt="">
+                </div>
+                <div class="col-md-6 mt-3">
+                    <div class="ps-0 ps-md-3">
+                        <em><? echo CFS()->get('resumeComparationText'); ?></em>
+                    </div>
                 </div>
             </div>
         </div>
@@ -346,10 +361,15 @@
 
 <script>
     $(document).ready(function(){
+        $(".owl-carousel-slider").owlCarousel({
+            items: 1,
+            dots: true
+        });
+    });
+    $(document).ready(function(){
         $(".owl-carousel-cases").owlCarousel({
             nav: true,
             navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-            margin: 30,
             responsiveClass:true,
             responsive: {
                 0: {
@@ -357,6 +377,7 @@
                 },
                 768: {
                     items: 3,
+                    margin: 30,
                 }
             }
         });
